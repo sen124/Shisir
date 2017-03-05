@@ -6,9 +6,22 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body  >
+  <div class="sen" >
+  <ul >
+  <div class="I"><li>Ideator</a></li></div>
+  <div class="A"><li>All ideas</a></li></div>
+  <div class="In"><li>Inspire me</a></li></div>
+  <div class="Ab"><li>About</a></li></div>
+  </ul>
+  </div>
+  <div id="wrap">
+   <%=render 'shared/nav'%>
+  <div class="container">
 <%= yield %>
-
+</div>
+</div>
+<%=render 'shared/footer'%>
 </body>
 </html>
+button style="width:33.3%"
