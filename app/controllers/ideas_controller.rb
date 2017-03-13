@@ -22,6 +22,12 @@ class IdeasController < ApplicationController
             redirect_to_edit__idea_path(params[:id])
         end
     end
+    def destroy
+        @idea=Idea.find(params[:id])
+        @idea.destroy
+        redirect_to_root_path
+    end
+    
     private
     def idea_params
         params.require(:idea).permit(:description,:author)
