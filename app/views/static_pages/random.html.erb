@@ -1,0 +1,18 @@
+<% if @idea.present? %>
+<%= link_to 'Inspire Me', random_path, class: 'btn btn-primary btn-block' %>
+<div class="panel panel-default">
+  <div class="panel-body">
+
+<blockquote>
+<p><%= @idea.description %></p>
+<small><%= @idea.author %></small>
+</blockquote>
+ <br> 
+ <div class="btn-group" role="group">
+ <%=link_to'delete',idea_path(@idea),method: :delete, class: 'btn btn-sm btn-danger',data: {confirm: "Are you sure?"}%>
+ <%=link_to'revise',edit_idea_path(@idea),class: 'btn btn-sm btn-success'%>
+  </div>
+ </div>
+</div>
+<h4>No Idea. <%= link_to 'here', root_path %></h4>
+<% end %>
