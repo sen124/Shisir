@@ -5,9 +5,10 @@ class IdeasController < ApplicationController
    def create
         @idea=Idea.create(idea_params)
         if @idea.valid?
+            flash[:success]= "your idea has been posted"
             #Implement later
         else
-            #Implement later
+            flash[:alert]="oops look like there is an error"#Implement later
         end
         redirect_to_root_path
    end
@@ -17,8 +18,10 @@ class IdeasController < ApplicationController
     def update
         @idea=Idea.find(params[:id])
         if @idea.update(idea_params)
+            flash[:success]="successfully updated"
             redirect_to_root_path
         else
+            flash[:alert]="sorry some error on the update"
             redirect_to_edit__idea_path(params[:id])
         end
     end
