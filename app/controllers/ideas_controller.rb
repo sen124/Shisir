@@ -1,8 +1,8 @@
 class IdeasController < ApplicationController
-    def index
-        @ideas=Idea.all
-    end
-    def create
+   def index
+     @idea = Idea.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+   end
+   def create
         @idea=Idea.create(idea_params)
         if @idea.valid?
             #Implement later
@@ -10,7 +10,7 @@ class IdeasController < ApplicationController
             #Implement later
         end
         redirect_to_root_path
-    end
+   end
     def edit
         @idea=Idea.find(params[:id])
     end

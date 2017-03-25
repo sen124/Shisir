@@ -15,7 +15,7 @@
         <%= simple_form_for Idea.new do |f| %>
   <%= f.input :description %>
   <%= f.input :author %>
-</div><% @ideas.each do |idea| %>
+</div><% @idea.each do |idea| %>
 <div class="panel panel-default">
   <div class="panel-body">
     Basic panel example
@@ -24,10 +24,11 @@
 <h3><%= idea.description %></h3>
 <h4><%= idea.author %></h4>
 </blockquote>
- <br> 
+ <br>
  <div class="btn-group" role="group">
  <%=link_to'delete',idea_path(idea),method: :delete, class: 'btn btn-sm btn-danger',data: {confirm: "Are you sure?"}%>
  <%=link_to'revise',edit_idea_path(idea),class: 'btn btn-sm btn-success'%>
+  
 
 <% end %>
 
@@ -35,9 +36,13 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%= f.submit 'Submit',class: 'btn btn-primary'%>
+       
       </div>
   </div>
   </div>
   </div>
 </div>
 <% end %>
+<div class = "text-center">
+  <%= will_paginate @idea %>
+</div>
