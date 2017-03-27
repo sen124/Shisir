@@ -15,7 +15,8 @@
         <%= simple_form_for Idea.new do |f| %>
   <%= f.input :description %>
   <%= f.input :author %>
-</div><% @idea.each do |idea| %>
+</div>
+<% @idea.each do |idea| %>
 <div class="panel panel-default">
   <div class="panel-body">
     Basic panel example

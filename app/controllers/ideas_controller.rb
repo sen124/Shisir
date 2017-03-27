@@ -6,9 +6,9 @@ class IdeasController < ApplicationController
         @idea=Idea.create(idea_params)
         if @idea.valid?
             flash[:success]= "your idea has been posted"
-            #Implement later
+            
         else
-            flash[:alert]="oops look like there is an error"#Implement later
+            flash[:alert]="oops look like there is an error"
         end
         redirect_to_root_path
    end
