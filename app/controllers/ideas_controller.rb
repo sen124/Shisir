@@ -10,7 +10,7 @@ class IdeasController < ApplicationController
         else
             flash[:alert]="oops look like there is an error"
         end
-        redirect_to_root_path
+        redirect_to root_path
    end
     def edit
         @idea=Idea.find(params[:id])
@@ -19,16 +19,16 @@ class IdeasController < ApplicationController
         @idea=Idea.find(params[:id])
         if @idea.update(idea_params)
             flash[:success]="successfully updated"
-            redirect_to_root_path
+            redirect_to root_path
         else
             flash[:alert]="sorry some error on the update"
-            redirect_to_edit__idea_path(params[:id])
+            redirect_to edit__idea_path(params[:id])
         end
     end
     def destroy
         @idea=Idea.find(params[:id])
         @idea.destroy
-        redirect_to_root_path
+        redirect_to root_path
     end
     
     private

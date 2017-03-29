@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Idea
+  Your Idea
 </button>
 
 <!-- Modal -->
@@ -9,41 +9,41 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h3 class="modal-title" id="myModalLabel">Insert Below</h3>
       </div>
       <div class="modal-body">
-        <%= simple_form_for Idea.new do |f| %>
+  <%= simple_form_for Idea.new do |f| %>
   <%= f.input :description %>
   <%= f.input :author %>
 </div>
 <% @idea.each do |idea| %>
 <div class="panel panel-default">
   <div class="panel-body">
-    Basic panel example
+    Wikiquotes
+    <h3>Thomas Edison</h3>
+    <h4>"Many of life's failures are people who did not realize how close they were to success when they gave up"</h4>
   </div>
 <blockquote>
 <h3><%= idea.description %></h3>
 <h4><%= idea.author %></h4>
 </blockquote>
- <br>
- <div class="btn-group" role="group">
- <%=link_to'delete',idea_path(idea),method: :delete, class: 'btn btn-sm btn-danger',data: {confirm: "Are you sure?"}%>
- <%=link_to'revise',edit_idea_path(idea),class: 'btn btn-sm btn-success'%>
-  
-
+<div class="btn-group" role="group">
+<%=link_to'delete',idea_path(@idea),method: :delete, class: 'btn btn-sm btn-danger',data: {confirm: "Are you sure?"}%>
+<%=link_to'revise',edit_idea_path(@idea),class: 'btn btn-sm btn-success'%>
+<br>  
 <% end %>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= f.submit 'Submit',class: 'btn btn-primary'%>
-       
-      </div>
-  </div>
-  </div>
-  </div>
 </div>
-<% end %>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<%= f.submit 'Submit',class: 'btn btn-primary'%>
+   
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class = "text-center">
   <%= will_paginate @idea %>
 </div>
+<% end %>

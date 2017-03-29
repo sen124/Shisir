@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>Shisir</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="mike">
-  <div class="sen" >
+<body class="A">
+  <div class="B" >
   <ul >
-  <div class="I"><li>Ideator</a></li></div>
+  <div class="C"><li>Ideator</a></li></div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav navbar-right">
-  <div class="A"><li><%= link_to 'All Ideas', root_path %></a></li></div>
-  <div class="In"><li><%= link_to 'Inspire me', root_path %></a></li></div>
-  <div class="Ab" ahref=about.html.erb><li><%= link_to 'About', about_path %></a></li></div>
+  <li class="D"><%= link_to 'All Ideas', root_path %></a></li>
+  <li class="E"><%= link_to 'Inspire me', root_path %></a></li>
+  <li class="F" ><ahref=about.html.erb><%= link_to 'About', about_path %></a></li>
   </ul>
   </div>
   
@@ -22,10 +22,10 @@
     <div class = "row">
       <div class = "col-xs-12 col-md-6 col-md-offset-3">
         <%= render 'shared/flash_messages' %>
-        <%= yield %>
+        
       </div>
     </div>
-  </div>
+    </div>
 <%= yield %>
 </body>
 </html>
